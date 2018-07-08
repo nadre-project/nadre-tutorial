@@ -39,7 +39,7 @@ By setting **jrec** and **rg** properly to paginate the output, as example:
 * Get records from 11 to 20:
   `http://${API_ENDPOINT}/search?of=xm&jrec=11&rg=10`
 * Get records from 21 to 30:
-  `http://${API_ENDPOINT}/search?of=xm&jrec=22&rg=10`
+  `http://${API_ENDPOINT}/search?of=xm&jrec=21&rg=10`
 
 > Do not set **rg** too high, there is a server-wide safety limit for it.
 
@@ -59,13 +59,6 @@ By setting **jrec** and **rg** properly to paginate the output, as example:
 Where:
   * **d1**: is the first date in `YYYY-mm-dd` format
   * **d2**: is the second date in `YYYY-mm-dd` format
-
-##### Filter outputs
-* Get only the **abstract**, **title** and **authors** of a resources
-  `http://${API_ENDPOINT}/search?of=xm&ot=abstract,title,authors`
-
-Where:
-  * **ot**: output tags, that is a comma separated lists of tags should be shown (e.g. ‘’ to get all fields, ‘title’ to get titles only).
 
 ### <a name="jsonapi" />JSON API
 
