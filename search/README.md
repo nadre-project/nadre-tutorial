@@ -38,9 +38,10 @@ By setting **jrec** and **rg** properly to paginate the output, as example:
     `http://${API_ENDPOINT}/search?of=xm&jrec=1&rg=10`
 * Get records from 11 to 20:
   `http://${API_ENDPOINT}/search?of=xm&jrec=11&rg=10`
-* Get records from 11 to 20:
+* Get records from 21 to 30:
   `http://${API_ENDPOINT}/search?of=xm&jrec=22&rg=10`
 
+> Do not set **rg** too high, there is a server-wide safety limit for it.
 
 #### Look for pattern in fields
 
@@ -68,7 +69,7 @@ Where:
 
 ### <a name="jsonapi" />JSON API
 
-In this section you will see the same examples saw above, but the output, this time, is in JSON format. To do this sets `of=recjson`
+In this section you will see the same examples saw above, but the output, this time, is in JSON format. To get ouput in JSON format sets: `of=recjson`
 
 #### Get first 10 records in the OAR
 
@@ -82,15 +83,16 @@ The following is the query to get the first 10 in the OAR in xml format
 
 #### Paginate results
 
-By setting `**jrec**` and `**rg**` properly to paginate the output, as example:
+By setting **jrec** and **rg** properly to paginate the output, as example:
 
 * Get records from 1 to 10
     `http://${API_ENDPOINT}/search?of=recjson&jrec=1&rg=10`
 * Get records from 11 to 20:
   `http://${API_ENDPOINT}/search?of=recjson&jrec=11&rg=10`
-* Get records from 11 to 20:
+* Get records from 21 to 30:
   `http://${API_ENDPOINT}/search?of=recjson&jrec=22&rg=10`
 
+> Do not set **rg** too high, there is a server-wide safety limit for it.
 
 #### Look for pattern in fields
 
