@@ -23,7 +23,7 @@ Using these APIs will return results in XML format.
 #### Get first 10 records in the OAR
 
 The following is the query to get the first 10 in the OAR in xml format
-* `http://${API_ENDPOINT}/search?of=xm&jrec=1&rg=10`
+* `http://${API_ENDPOINT}/search?of=recjson&jrec=1&rg=10`
 
   * Parameters:
     * `of` = output format (e.g. `xm` for MARCXML)
@@ -32,7 +32,7 @@ The following is the query to get the first 10 in the OAR in xml format
 
 #### Paginate results
 
-By setting `**jrec**` and `**rg**` properly to paginate the output, as example:
+By setting **jrec** and **rg** properly to paginate the output, as example:
 
 * Get records from 1 to 10
     `http://${API_ENDPOINT}/search?of=xm&jrec=1&rg=10`
@@ -44,14 +44,31 @@ By setting `**jrec**` and `**rg**` properly to paginate the output, as example:
 
 #### Look for pattern in fields
 
-* Get the first 10 records that contains the string “Hackfest” in the title:
+* Get the first 10 records that contains the string '**Hackfest**' in the title:
   `http://${API_ENDPOINT}/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm`
 
-* Get the first 10 records in **PRESENTATIONSNADRE** collection that contains **NADRE** in keyword:  `http://${API_ENDPOINT}/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10`
+* Get the first 10 records in '**PRESENTATIONSNADRE**' collection that contains '**NADRE**' in keyword:  `http://${API_ENDPOINT}/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10`
+
+#### Filter records and outputs in OAR
+
+##### Filter records
+* Get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22)
+  `http://${API_ENDPOINT}/search?of=xm&d1=2018-01-01&d2=2018-02-22`
+
+Where:
+  * **d1**: is the first date in `YYYY-mm-dd` format
+  * **d2**: is the second date in `YYYY-mm-dd` format
+
+##### Filter outputs
+* Get only the **abstract**, **title** and authors of **resources**
+  `http://${API_ENDPOINT}/search?of=xm&ot=abstract,title,authors`
+
+Where:
+  * **ot**: output tags, that is a comma separated lists of tags should be outputted (e.g. ‘’ to get all fields, ‘title’ to get titles only).
 
 ### <a name="jsonapi" />JSON API
 
-In this section you will see the same examples saw above, but the output, this time, is in JSON format.
+In this section you will see the same examples saw above, but the output, this time, is in JSON format. To do this sets `of=recjson`
 
 #### Get first 10 records in the OAR
 
@@ -81,5 +98,22 @@ By setting `**jrec**` and `**rg**` properly to paginate the output, as example:
   `http://${API_ENDPOINT}/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson`
 
 * Get the first 10 records in **PRESENTATIONSNADRE** collection that contains **NADRE** in keyword:  `http://${API_ENDPOINT}/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10`
+
+#### Filter records and outputs in OAR
+
+##### Filter records
+* Get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22)
+  `http://${API_ENDPOINT}/search?of=recjson&d1=2018-01-01&d2=2018-02-22`
+
+Where:
+  * **d1**: is the first date in `YYYY-mm-dd` format
+  * **d2**: is the second date in `YYYY-mm-dd` format
+
+##### Filter outputs
+* Get only the **abstract**, **title** and authors of **resources**
+  `http://${API_ENDPOINT}/search?of=recjson&ot=abstract,title,authors`
+
+Where:
+  * **ot**: output tags, that is a comma separated lists of tags should be outputted (e.g. ‘’ to get all fields, ‘title’ to get titles only)
 
 For further information, see the [Search Engine API documentation](https://nadre.ethernet.edu.et/help/hacking/search-engine-api)

@@ -7,7 +7,4 @@ It consists of two folders:
 
 In each folder there is a README.md file that describes how to perform the examples.
 
-If you have any questions or comments, please feel free to contact us using the
-Sci-GaIA project dicussion forum
-
 If you have any questions or comments, please feel free to contact us using the project dicussion forum: [discourse.ethernet.edu.et](http://discourse.ethernet.edu.et/)
