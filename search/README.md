@@ -85,7 +85,7 @@ By setting **jrec** and **rg** properly to paginate the output, as example:
 * Get records from 11 to 20:
   `curl "http://${API_ENDPOINT}/search?of=recjson&jrec=11&rg=10" | jq .`
 * Get records from 21 to 30:
-  `curl "http://${API_ENDPOINT}/search?of=recjson&jrec=22&rg=10" | jq .`
+  `curl "http://${API_ENDPOINT}/search?of=recjson&jrec=21&rg=10" | jq .`
 
 > Do not set **rg** too high, there is a server-wide safety limit for it.
 
