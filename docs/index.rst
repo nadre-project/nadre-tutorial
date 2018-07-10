@@ -6,6 +6,8 @@
 Welcome to NADRE tutorial's documentation!
 ==========================================
 
+This is the documentation for NADRE tutorial
+
 Contents:
 
 .. toctree::
@@ -13,11 +15,3 @@ Contents:
 
    search
    submit
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
