@@ -13,5 +13,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   search
-   submit
+   search-engine-api
+   submit-records

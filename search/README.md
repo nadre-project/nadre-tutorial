@@ -1,6 +1,6 @@
 # Search Engine API
 
-Invenio has a Search Engine API, you can use to find what you are looking for.
+Invenio has a Search Engine API, you can use to find what you are looking for. It basically allows you to search for records in the repository, simply creating HTML quey string, like:
 
 * Syntax: `GET /search?p=...&of=...&ot=...&jrec=...&rg=...`
 
@@ -14,7 +14,7 @@ Invenio provides three different kinds of API
 2. JSON API
 3. Pyhton API
 
-In the following sections you will see [XML API](#xmlapi) and then [JSON API](#jsonapi). You can use these examples by coping the URL in your browser, and replacing the placeholder `${API_ENDPOINT}` with the actual Invenio based OAR endpoint. Otherwise you can can use the [curl](http://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html) command line tool.
+In the following sections you will see [XML API](#xmlapi) and then [JSON API](#jsonapi). You can use these examples by coping the URL in your browser, and replacing the placeholder `${API_ENDPOINT}` with the actual Invenio based OAR endpoint. Otherwise you can can use the [curl](http://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html) command line tool. In this tutorial I show you how to perform them in a browser
 
 ### <a name="xmlapi" />XML API
 
@@ -28,7 +28,7 @@ The following is the query to get the first 10 in the OAR in xml format
   * Parameters:
     * `of` = output format (e.g. `xm` for MARCXML)
     * `jrec` = jump to record ID (e.g. 1 for first hit)
-    * `rg` = records-in-groups-of (e.g. 10 hits per page)
+    * `rg` = records in groups of (e.g. 10 hits per page)
 
 #### Paginate results
 
@@ -62,7 +62,8 @@ Where:
 
 ### <a name="jsonapi" />JSON API
 
-In this section you will see the same examples saw above, but the output, this time, is in JSON format. To get ouput in JSON format sets: `of=recjson`
+In this section you will see the same examples saw above, but the output, this time, is in JSON format. To get ouput in JSON format sets: `of=recjson`.
+To better understand the output returned by the OAR I installed a plugin in my browser that  that makes the JSON results human readable.
 
 #### Get first 10 records in the OAR
 
@@ -72,7 +73,7 @@ The following is the query to get the first 10 in the OAR in xml format
   * Parameters:
     * `of` = output format (e.g. `xm` for MARCXML)
     * `jrec` = jump to record ID (e.g. 1 for first hit)
-    * `rg` = records-in-groups-of (e.g. 10 hits per page)
+    * `rg` = records in groups-of (e.g. 10 hits per page)
 
 #### Paginate results
 
