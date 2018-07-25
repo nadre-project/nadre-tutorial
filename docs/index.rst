@@ -17,8 +17,8 @@ This tutorial shows you how to programmatically interact with an Invenio_ based 
 
 The tutorial cosists of the following two sections:
 
-- the `first <search-engine-api.rst>`_ one shows some examples on how to search object stored in the digital repository building HTML query;
-- the `second <submit-records.rst>`_ 
+- the `first <search-engine-api.html>`_ one shows some examples on how to search object stored in the digital repository building HTML query;
+- the `second <submit-records.html>`_ 
 
 Contents:
 
