@@ -5,18 +5,8 @@ Search Engine API
 
   * `Introduction`_
   * `XML API`_
-
-   - Paginate results
-   - Look for patterns in fields
-   - Filter records and outputs
-
   * `JSON API`_
-
-   - Paginate results
-   - Look for patterns in fields
-   - Filter records and outputs
-
-  - `References`_
+  * `References`_
 
 ------------
 Introduction
@@ -28,7 +18,6 @@ To search or browse records in the OAR you have to just create HTML queries spec
 Following the syntax should be used to create the queries:
 
 Syntax
-
   .. code-block:: bash
 
     GET /search?p=...&of=...&ot=...&jrec=...&rg=...
@@ -43,6 +32,10 @@ where
   **jrec** is jump to record ID (e.g. 1 for first hit)
 
   **rg** is records-in-groups-of (e.g. 10 hits per page)
+
+You can use other parameters as well; the list above mentions the most useful one.  For full documentation on these and the other `/search` URL parameters, please see section 3.1 of Search Engine API [#]_.
+
+.. [#] http://nadre.ethernet.edu.et/help/hacking/search-engine-api
 
 ----------------
 XML API
