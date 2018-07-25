@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "963cf6fc-1543-4a40-b12e-2c7fe4107b84",
+		"name": "NADRE TUTORIAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Submit records",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Search Engine API",
+			"description": "",
+			"item": [
+				{
+					"name": "XML API",
+					"description": "",
+					"item": [
+						{
+							"name": "Get first 10 records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "jrec",
+											"value": "1"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "xm"
+										}
+									]
+								},
+								"description": "List first ten records"
+							},
+							"response": []
+						},
+						{
+							"name": "Get next 10 records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=xm",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "jrec",
+											"value": "11"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "xm"
+										}
+									]
+								},
+								"description": "List ten records from eleventh to twentyth"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "JSON API",
+					"description": "",
+					"item": [
+						{
+							"name": "Get first 10 records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=recjson",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "jrec",
+											"value": "1"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "recjson"
+										}
+									]
+								},
+								"description": "List first ten records"
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "63f378f1-5293-4ef3-a447-8d79171ce19b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b5dd4cf-6741-4154-99f4-675fff497bc2",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}

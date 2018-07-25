@@ -9,8 +9,12 @@ Search Engine API
     * `2.1 Get records`_
     * `2.2 Look for patterns in fields`_
     * `2.3 Filter records and outputs`_
-  * `JSON API`_
-  * `References`_
+  * `3. JSON API`_
+
+    * `3.1 Get records`_
+    * `3.2 Look for patterns in fields`_
+    * `3.3 Filter records and outputs`_
+  * `4. References`_
 
 ---------------
 1. Introduction
@@ -55,6 +59,7 @@ So, to get the first 10 records stored in the OAR in XML format you can use the 
 
     <embed>
         <a href="http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm" target="_blank">http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm</a>
+    <br/>
     </embed>
 
 You can change :code:`jrec` parameter to implement records pagination, for example the query:
@@ -63,6 +68,7 @@ You can change :code:`jrec` parameter to implement records pagination, for examp
 
     <embed>
         <a href="http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=xm" target="_blank">http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=xm</a>
+    <br/>
     </embed>
 
 returns the next 10 records starting from the eleventh, or use the following
@@ -71,6 +77,7 @@ returns the next 10 records starting from the eleventh, or use the following
 
     <embed>
       <a href="http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=xm" target="_blank">http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=xm</a>
+    <br/>
     </embed>
 
 to get records from 21\ :sup:`st` to 30\ :sup:`th`, and so on...
@@ -89,6 +96,7 @@ To get, for example, the first 10 records that contains the string *'Hackfest'*,
 
     <embed>
       <a href="http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm" target="_blank">http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm</a>
+    <br/>
     </embed>
 
 Where
@@ -102,6 +110,7 @@ If you want to get, for example, the first 10 records in *'PRESENTATIONSNADRE'* 
 
     <embed>
       <a href="http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10" target="_blank"> http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10</a>
+      <br/>
     </embed>
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,6 +123,7 @@ To get all records uploaded from a given date (e.g. 2018-01-01) to another given
 
     <embed>
       <a href="http://nadre.ethernet.edu.et/search?of=xm&d1=2018-01-01&d2=2018-02-22" target="_blank"> http://nadre.ethernet.edu.et/search?of=xm&d1=2018-01-01&d2=2018-02-22</a>
+    <br/>
     </embed>
 
 Where
@@ -127,29 +137,94 @@ Where
 
     <embed>
       <a href="http://nadre.ethernet.edu.et/search?of=xm&ot=abstract,title,authors" target="_blank"> http://nadre.ethernet.edu.et/search?of=xm&ot=abstract,title,authors</a>
+    <br/>
     </embed>
 
 .. Where
   **ot** output tags, is a comma separated lists of tags should be shown (e.g. ‘’ to get all fields, ‘title’ to get titles only).
 
 ------------
-JSON API
+3. JSON API
 ------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper, augue et accumsan pulvinar, orci augue fringilla ligula, vitae hendrerit mi neque ac diam. Nam a facilisis ligula. Nunc sit amet velit non dui bibendum suscipit malesuada non ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce fermentum nulla finibus, scelerisque mauris et, egestas metus. Pellentesque ut finibus ipsum. Phasellus pharetra tristique mi, vitae facilisis neque lacinia sit amet. Donec odio odio, porta at vehicula ut, vehicula ut enim. Cras congue sapien at metus vestibulum, eu vehicula enim imperdiet. Aliquam erat volutpat. Nulla ullamcorper ipsum
+Internally, Invenio records are represented in JSON. You can ask for JSON output format, simply, setting :code:`of` to :code:`recjson` (:code:`of=recjson`).
 
 .. topic:: Before proceeding...
 
   You need to have some useful tools used in the rest of this tutorial:
-   - :code:`curl` a tool to transfer data from or to a server `link  <http://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html>`_;
-   - :code:`jq` a lightweight and flexible command-line JSON processor `link <https://stedolan.github.io/jq/>`_;
-   - :code:`php5-cli` and :code:`php5-curl`
+    - :code:`curl` a tool to transfer data from or to a server `link  <http://www.mit.edu/afs.new/sipb/user/ssen/src/curl-7.11.1/docs/curl.html>`_;
+    - :code:`jq` a lightweight and flexible command-line JSON processor `link <https://stedolan.github.io/jq/>`_.
 
-----------
-References
-----------
+.. note::
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper, augue et accumsan pulvinar, orci augue fringilla ligula, vitae hendrerit mi neque ac diam. Nam a facilisis ligula. Nunc sit amet velit non dui bibendum suscipit malesuada non ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce fermentum nulla finibus, scelerisque mauris et, egestas metus. Pellentesque ut finibus ipsum. Phasellus pharetra tristique mi, vitae facilisis neque lacinia sit amet. Donec odio odio, porta at vehicula ut, vehicula ut enim. Cras congue sapien at metus vestibulum, eu vehicula enim imperdiet. Aliquam erat volutpat. Nulla ullamcorper ipsum
+  If you are not on a `*NIX` based system, you can use `Postman <https://www.getpostman.com/apps>`_ and import this collection :download:`files/postman_collection.json` to perform the queries.
+
+The following are the same example saw In XML API, but this time results are in JSON format. Just copy the command into shell session and see the outputs.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.1 Get records
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get first ten records
+
+.. code-block:: bash
+
+  curl -X GET \
+  "http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=recjson" | jq .
+
+Records from eleventh to twentyth
+
+.. code-block:: bash
+
+  curl -X GET \
+  "http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=recjson" | jq .
+
+From 21\ :sup:`st` to 30\ :sup:`th`
+
+.. code-block:: bash
+
+  curl -X GET \
+  "http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=recjson" | jq .
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.2 Look for patterns in fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get the first 10 records that contains the string “Hackfest” in the title
+
+.. code-block:: bash
+
+  curl -X GET \
+  'http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson' | jq .
+
+Get the first 10 records in 'PRESENTATIONSNADRE' collection that contains 'NADRE' in keyword
+
+.. code-block:: bash
+
+  curl -X GET \
+  'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' | jq .
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.3 Filter records and outputs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22)
+
+.. code-block:: bash
+
+  curl -X GET \
+  'http://nadre.ethernet.edu.et/search?of=recjson&d1=2018-01-01&d2=2018-02-22' | jq .
+
+Get only the abstract, title and authors of resources
+
+.. code-block:: bash
+
+  curl -X GET \
+  'http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors' | jq .
+
+-------------
+4. References
+-------------
 
 .. [#] http://nadre.ethernet.edu.et/help/hacking/search-engine-api
 .. [#] http://nadre.ethernet.edu.et/help/admin/howto-marc
