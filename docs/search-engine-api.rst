@@ -170,21 +170,24 @@ Get first ten records
 .. code-block:: bash
 
   curl -X GET \
-  "http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=recjson" | jq .
+  "http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=recjson" \
+  | jq .
 
 Records from eleventh to twentyth
 
 .. code-block:: bash
 
   curl -X GET \
-  "http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=recjson" | jq .
+  "http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=recjson" \
+  | jq .
 
 From 21\ :sup:`st` to 30\ :sup:`th`
 
 .. code-block:: bash
 
   curl -X GET \
-  "http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=recjson" | jq .
+  "http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=recjson" \
+  | jq .
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3.2 Look for patterns in fields
@@ -195,14 +198,16 @@ Get the first 10 records that contains the string “Hackfest” in the title
 .. code-block:: bash
 
   curl -X GET \
-  'http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson' | jq .
+  'http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson' \
+  | jq .
 
 Get the first 10 records in 'PRESENTATIONSNADRE' collection that contains 'NADRE' in keyword
 
 .. code-block:: bash
 
   curl -X GET \
-  'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' | jq .
+  'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' \
+  | jq .
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 3.3 Filter records and outputs
@@ -213,14 +218,16 @@ Get all records uploaded from a given date (e.g. 2018-01-01) to another given da
 .. code-block:: bash
 
   curl -X GET \
-  'http://nadre.ethernet.edu.et/search?of=recjson&d1=2018-01-01&d2=2018-02-22' | jq .
+  'http://nadre.ethernet.edu.et/search?of=recjson&d1=2018-01-01&d2=2018-02-22' \
+  | jq .
 
 Get only the abstract, title and authors of resources
 
 .. code-block:: bash
 
   curl -X GET \
-  'http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors' | jq .
+  'http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors' \
+  | jq .
 
 -------------
 4. References
