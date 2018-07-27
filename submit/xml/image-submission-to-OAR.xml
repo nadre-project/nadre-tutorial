@@ -2,15 +2,15 @@
 <collection xmlns="http://www.loc.gov/MARC21/slim">
   <record xmlns="http://www.loc.gov/MARC21/slim">
     <datafield tag="024" ind1="7" ind2=" "> <!-- DIGITAL OBJECT IDENTIFIER -->
-      <subfield code="a">10.20372/ethernet:1532727488.3</subfield>
+      <subfield code="a">replace-with-valid-DOI</subfield>
       <subfield code="2">DOI</subfield>
     </datafield>
     <datafield tag="260" ind1=" " ind2=" "> <!-- PUBLICATION, DISTRIBUTION, ETC. -->
-      <subfield code="c">2018-07-27</subfield> <!-- c: Date of publication -->
+      <subfield code="c">2016-11-22</subfield> <!-- c: Date of publication -->
     </datafield>
     <datafield tag="100" ind1=" " ind2=" "> <!-- MAIN ENTRY PERSONAL NAME -->
-      <subfield code="a">Mario Torrisi</subfield>
-      <subfield code="v">PI4</subfield>
+      <subfield code="a">John Smith</subfield>
+      <subfield code="v">University of City</subfield>
       <subfield code="w">Italy</subfield>
       <subfield code="j">0000-0002-5532-8201</subfield>
     </datafield>
