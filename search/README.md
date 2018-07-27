@@ -26,7 +26,7 @@ The following is the query to get the first 10 in the OAR in xml format
 * `http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10`
 
   * Parameters:
-    * `of` = output format (e.g. `xm` for MARCXML)
+    * `of` = output format (e.g. `xm` for [MARCXML](http://nadre.ethernet.edu.et/help/admin/howto-marc))
     * `jrec` = jump to record ID (e.g. 1 for first hit)
     * `rg` = records in groups of (e.g. 10 hits per page)
 
