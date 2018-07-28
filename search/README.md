@@ -23,7 +23,8 @@ Using these APIs will return results in XML format.
 #### Get first 10 records in the OAR
 
 The following is the query to get the first 10 in the OAR in xml format
-[http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10](http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10){:target="_blank"}
+
+  [http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10](http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10)
 
   * Parameters:
     * `of` = output format (e.g. `xm` for [MARCXML](http://nadre.ethernet.edu.et/help/admin/howto-marc))
@@ -35,26 +36,27 @@ The following is the query to get the first 10 in the OAR in xml format
 By setting **jrec** and **rg** properly to paginate the output, as example:
 
 * Get records from 1 to 10
-  `http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10`
+  [http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10](http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10)
 * Get records from 11 to 20:
-  `http://nadre.ethernet.edu.et/search?of=xm&jrec=11&rg=10`
+  [http://nadre.ethernet.edu.et/search?of=xm&jrec=11&rg=10](http://nadre.ethernet.edu.et/search?of=xm&jrec=11&rg=10)
 * Get records from 21 to 30:
-  `http://nadre.ethernet.edu.et/search?of=xm&jrec=21&rg=10`
+  [http://nadre.ethernet.edu.et/search?of=xm&jrec=21&rg=10](http://nadre.ethernet.edu.et/search?of=xm&jrec=21&rg=10)
 
 > Do not set **rg** too high, there is a server-wide safety limit for it.
 
 #### Look for pattern in fields
 
 * Get the first 10 records that contains the string '**Hackfest**' in the title:
-  `http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm`
+  [http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm](http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm)
 
-* Get the first 10 records in '**PRESENTATIONSNADRE**' collection that contains '**NADRE**' in keyword:  `http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10`
+* Get the first 10 records in '**PRESENTATIONSNADRE**' collection that contains '**NADRE**' in keyword:
+  [http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10](http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm)
 
 #### Filter records and outputs in OAR
 
 ##### Filter records
 * Get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22)
-  `http://nadre.ethernet.edu.et/search?of=xm&d1=2018-01-01&d2=2018-02-22`
+  [http://nadre.ethernet.edu.et/search?of=xm&d1=2018-01-01&d2=2018-02-22](http://nadre.ethernet.edu.et/search?of=xm&d1=2018-01-01&d2=2018-02-22)
 
 Where:
   * **d1**: is the first date in `YYYY-mm-dd` format
