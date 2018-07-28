@@ -117,7 +117,8 @@ By setting **jrec** and **rg** properly to paginate the output, as example:
 
 * Get the first 10 records in **PRESENTATIONSNADRE** collection that contains **NADRE** in keyword:  
   ```bash
-  curl \ 'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' \
+  curl \
+  'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' \
   | jq .
   ```
 
