@@ -23,7 +23,7 @@ Using these APIs will return results in XML format.
 #### Get first 10 records in the OAR
 
 The following is the query to get the first 10 in the OAR in xml format
-<a href="http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10" target="_blank">http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10</a>
+[http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10](http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10){:target="_blank"}
 
   * Parameters:
     * `of` = output format (e.g. `xm` for [MARCXML](http://nadre.ethernet.edu.et/help/admin/howto-marc))
