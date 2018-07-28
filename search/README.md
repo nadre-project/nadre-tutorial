@@ -99,7 +99,9 @@ By setting **jrec** and **rg** properly to paginate the output, as example:
 
 ##### Filter records
 * Get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22)
-  `http://nadre.ethernet.edu.et/search?of=recjson&d1=2018-01-01&d2=2018-02-22`
+  ```console
+  curl 'http://nadre.ethernet.edu.et/search?of=recjson&d1=2018-01-01&d2=2018-02-22' | jq .
+  ```
 
 Where:
   * **d1**: is the first date in `YYYY-mm-dd` format
