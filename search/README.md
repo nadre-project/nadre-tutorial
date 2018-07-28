@@ -23,7 +23,7 @@ Using these APIs will return results in XML format.
 #### Get first 10 records in the OAR
 
 The following is the query to get the first 10 in the OAR in xml format
-* `http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10`
+`http://nadre.ethernet.edu.et/search?of=xm&jrec=1&rg=10`
 
   * Parameters:
     * `of` = output format (e.g. `xm` for [MARCXML](http://nadre.ethernet.edu.et/help/admin/howto-marc))
@@ -68,7 +68,9 @@ To better understand the output returned by the OAR I installed a plugin in my b
 #### Get first 10 records in the OAR
 
 The following is the query to get the first 10 in the OAR in xml format
-* `http://nadre.ethernet.edu.et/search?of=recjson&jrec=1&rg=10`
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?of=recjson&jrec=1&rg=10' | jq .
+  ```
 
   * Parameters:
     * `of` = output format (e.g. `xm` for MARCXML)
@@ -80,20 +82,31 @@ The following is the query to get the first 10 in the OAR in xml format
 By setting **jrec** and **rg** properly to paginate the output, as example:
 
 * Get records from 1 to 10
-  `http://nadre.ethernet.edu.et/search?of=recjson&jrec=1&rg=10`
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?of=recjson&jrec=1&rg=10' | jq .
+  ```
 * Get records from 11 to 20:
-  `http://nadre.ethernet.edu.et/search?of=recjson&jrec=11&rg=10`
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?of=recjson&jrec=11&rg=10' | jq .
+  ```
 * Get records from 21 to 30:
-  `http://nadre.ethernet.edu.et/search?of=recjson&jrec=21&rg=10`
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?of=recjson&jrec=21&rg=10' | jq .
+  ```
 
 > Do not set **rg** too high, there is a server-wide safety limit for it.
 
 #### Look for pattern in fields
 
 * Get the first 10 records that contains the string “Hackfest” in the title:
-`http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson`
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson' | jq .
+  ```
 
-* Get the first 10 records in **PRESENTATIONSNADRE** collection that contains **NADRE** in keyword:  `http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10`
+* Get the first 10 records in **PRESENTATIONSNADRE** collection that contains **NADRE** in keyword:  
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' | jq .
+  ```
 
 #### Filter records and outputs in OAR
 
@@ -109,7 +122,9 @@ Where:
 
 ##### Filter outputs
 * Get only the **abstract**, **title** and authors of **resources**
-  `http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors`
+  ```bash
+  curl 'http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors' | jq .
+  ```
 
 Where:
   * **ot**: output tags, that is a comma separated lists of tags should be outputted (e.g. ‘’ to get all fields, ‘title’ to get titles only)
