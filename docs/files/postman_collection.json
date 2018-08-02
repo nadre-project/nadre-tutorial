@@ -91,6 +91,166 @@
 								"description": "List ten records from eleventh to twentyth"
 							},
 							"response": []
+						},
+						{
+							"name": "Get next 10 records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=xm",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "jrec",
+											"value": "21"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "xm"
+										}
+									]
+								},
+								"description": "List ten records from twentyfirst"
+							},
+							"response": []
+						},
+						{
+							"name": "Get records having specified criteria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=xm",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "p",
+											"value": "Hackfest"
+										},
+										{
+											"key": "f",
+											"value": "title"
+										},
+										{
+											"key": "jrec",
+											"value": "0"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "xm"
+										}
+									]
+								},
+								"description": "Get ten records having 'Hackfest' in title"
+							},
+							"response": []
+						},
+						{
+							"name": "Get records having specified criteria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=xm&jrec=1&rg=10",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "p1",
+											"value": "collection:PRESENTATIONSNADRE+keyword:NADRE"
+										},
+										{
+											"key": "of",
+											"value": "xm"
+										},
+										{
+											"key": "jrec",
+											"value": "1"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										}
+									]
+								},
+								"description": "Get ten records in 'PRESENTATIONNADRE' having 'NADRE' in title"
+							},
+							"response": []
+						},
+						{
+							"name": "Get records between date",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?of=xm&d1=2018-01-01&d2=2018-02-22",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "of",
+											"value": "xm"
+										},
+										{
+											"key": "d1",
+											"value": "2018-01-01"
+										},
+										{
+											"key": "d2",
+											"value": "2018-02-22"
+										}
+									]
+								},
+								"description": "Get records submitted between two dates."
+							},
+							"response": []
 						}
 					],
 					"_postman_isSubFolder": true
@@ -133,6 +293,236 @@
 									]
 								},
 								"description": "List first ten records"
+							},
+							"response": []
+						},
+						{
+							"name": "Get next 10 records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?jrec=11&rg=10&of=recjson",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "jrec",
+											"value": "11"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "recjson"
+										}
+									]
+								},
+								"description": "List ten records from eleventh to twentyth"
+							},
+							"response": []
+						},
+						{
+							"name": "Get next 10 records",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=recjson",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "jrec",
+											"value": "21"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "recjson"
+										}
+									]
+								},
+								"description": "List ten records from twenty first to thirty"
+							},
+							"response": []
+						},
+						{
+							"name": "Get records having specified criteria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?p=Hackfest&f=title&jrec=0&rg=10&of=recjson",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "p",
+											"value": "Hackfest"
+										},
+										{
+											"key": "f",
+											"value": "title"
+										},
+										{
+											"key": "jrec",
+											"value": "0"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										},
+										{
+											"key": "of",
+											"value": "recjson"
+										}
+									]
+								},
+								"description": "Get ten records having 'Hackfest' in title"
+							},
+							"response": []
+						},
+						{
+							"name": "Get records having specified criteria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "p1",
+											"value": "collection:PRESENTATIONSNADRE+keyword:NADRE"
+										},
+										{
+											"key": "of",
+											"value": "recjson"
+										},
+										{
+											"key": "jrec",
+											"value": "1"
+										},
+										{
+											"key": "rg",
+											"value": "10"
+										}
+									]
+								},
+								"description": "Get ten records in 'PRESENTATIONNADRE' having 'NADRE' in title"
+							},
+							"response": []
+						},
+						{
+							"name": "Get records between date",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?of=recjson&d1=2018-01-01&d2=2018-02-22",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "of",
+											"value": "recjson"
+										},
+										{
+											"key": "d1",
+											"value": "2018-01-01"
+										},
+										{
+											"key": "d2",
+											"value": "2018-02-22"
+										}
+									]
+								},
+								"description": "Get records submitted between two dates."
+							},
+							"response": []
+						},
+						{
+							"name": "Get only specified metadata",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors",
+									"protocol": "http",
+									"host": [
+										"nadre",
+										"ethernet",
+										"edu",
+										"et"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "of",
+											"value": "recjson"
+										},
+										{
+											"key": "ot",
+											"value": "abstract,title,authors"
+										}
+									]
+								},
+								"description": "Get records with only the specified metadata"
 							},
 							"response": []
 						}

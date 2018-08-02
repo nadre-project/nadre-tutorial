@@ -3,21 +3,21 @@ Search Engine API
 
 .. sidebar:: Table of content
 
-  * `1. Introduction`_
-  * `2. XML API`_
+  * `Introduction`_
+  * `XML API`_
 
-    * `2.1 Get records`_
-    * `2.2 Look for patterns in fields`_
-    * `2.3 Filter records and outputs`_
-  * `3. JSON API`_
+    * :ref:`label1`
+    * :ref:`label2`
+    * :ref:`label3`
+  * `JSON API`_
 
-    * `3.1 Get records`_
-    * `3.2 Look for patterns in fields`_
-    * `3.3 Filter records and outputs`_
-  * `4. References`_
+    * :ref:`label4`
+    * :ref:`label5`
+    * :ref:`label6`
 
----------------
-1. Introduction
+.. _Introduction:
+
+Introduction
 ---------------
 
 Exploiting search Engine API of an Invenio based OAR allows you to create, for example, a new front end for your repository.
@@ -43,14 +43,16 @@ where
 
 You can use other parameters as well; the list above mentions the most useful one.  For full documentation on these and the other `/search` URL parameters, please see section 3.1 of Search Engine API [#]_.
 
-----------------
-2. XML API
+.. _`XML API`:
+
+XML API
 ----------------
 
 To get results of your queries in XML format you have to set output format parameter to **xm** (:code:`of=xm`). The OAR return the results in MARCXML [#]_.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2.1 Get records
+.. _label1:
+
+Get records
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 So, to get the first 10 records stored in the OAR in XML format you can use the following query
@@ -58,8 +60,8 @@ So, to get the first 10 records stored in the OAR in XML format you can use the 
 .. raw:: html
 
     <embed>
-        <a href="http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm" target="_blank">http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm</a>
-    <br/>
+          <a href="http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm" target="_blank">http://nadre.ethernet.edu.et/search?jrec=1&rg=10&of=xm</a>
+        <br/>
     </embed>
 
 You can change :code:`jrec` parameter to implement records pagination, for example the query:
@@ -86,8 +88,9 @@ to get records from 21\ :sup:`st` to 30\ :sup:`th`, and so on...
 
   Do not set `rg` too high; there is a server-wide safety limit on it.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2.2 Look for patterns in fields
+.. _label2:
+
+Look for patterns in fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get, for example, the first 10 records that contains the string *'Hackfest'*, you can use the :code:`p` parameter to specify the pattern you are looking for and :code:`f` parameter to specify the field in which search the patter. See the query below:
@@ -113,8 +116,9 @@ If you want to get, for example, the first 10 records in *'PRESENTATIONSNADRE'* 
       <br/>
     </embed>
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2.3 Filter records and outputs
+.. _label3:
+
+Filter records and outputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22), you can issue:
@@ -144,7 +148,7 @@ Where
   **ot** output tags, is a comma separated lists of tags should be shown (e.g. ‘’ to get all fields, ‘title’ to get titles only).
 
 ------------
-3. JSON API
+JSON API
 ------------
 
 Internally, Invenio records are represented in JSON. You can ask for JSON output format, simply, setting :code:`of` to :code:`recjson` (:code:`of=recjson`).
@@ -161,8 +165,9 @@ Internally, Invenio records are represented in JSON. You can ask for JSON output
 
 The following are the same example saw In XML API, but this time results are in JSON format. Just copy the command into shell session and see the outputs.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-3.1 Get records
+.. _label4:
+
+Get records
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Get first ten records
@@ -189,8 +194,9 @@ From 21\ :sup:`st` to 30\ :sup:`th`
   "http://nadre.ethernet.edu.et/search?jrec=21&rg=10&of=recjson" \
   | jq .
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-3.2 Look for patterns in fields
+.. _label5:
+
+Look for patterns in fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Get the first 10 records that contains the string “Hackfest” in the title
@@ -209,8 +215,9 @@ Get the first 10 records in 'PRESENTATIONSNADRE' collection that contains 'NADRE
   'http://nadre.ethernet.edu.et/search?p1=collection:PRESENTATIONSNADRE+keyword:NADRE&of=recjson&jrec=1&rg=10' \
   | jq .
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-3.3 Filter records and outputs
+.. _label6:
+
+Filter records and outputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Get all records uploaded from a given date (e.g. 2018-01-01) to another given date (e.g. 2018-02-22)
@@ -228,10 +235,6 @@ Get only the abstract, title and authors of resources
   curl -X GET \
   'http://nadre.ethernet.edu.et/search?of=recjson&ot=abstract,title,authors' \
   | jq .
-
--------------
-4. References
--------------
 
 .. [#] http://nadre.ethernet.edu.et/help/hacking/search-engine-api
 .. [#] http://nadre.ethernet.edu.et/help/admin/howto-marc
