@@ -147,7 +147,6 @@ Where
 .. Where
   **ot** output tags, is a comma separated lists of tags should be shown (e.g. ‘’ to get all fields, ‘title’ to get titles only).
 
-------------
 JSON API
 ------------
 
