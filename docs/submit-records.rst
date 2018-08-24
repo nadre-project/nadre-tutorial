@@ -47,10 +47,12 @@ From the downloaded github repository folder, change to the :code:`/submit/curl/
 
 To upload an image, for example, to the NADRE repository, you can refer to the :code:`image-submission-to-OAR.md` file shown below.
 
-.. include:: files/image-submission-to-OAR.md
-	:code: bash
+.. literalinclude:: files/image-submission-to-OAR.md
+	:language: bash
 
 That contains the curl command to perform and the expected output.
+
+.. _`create_doi`:
 
 Step 1: Create new DOI
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -60,23 +62,23 @@ First of all, you have to create a new DOI executing the :code:`request_doi.py` 
 
 	nadre-tutorial-master/submit/curl$ python request_doi.py
 
+.. _`edit_xml`:
+
 Step 2: Edit XML file
 ~~~~~~~~~~~~~~~~~~~~~
 Now edit the :code:`../xml/image-submission-to-OAR.xml` file with your favourite editor. As example:
 
 1. edit the placeholder in the :code:`tag="024"` with the DOI generated above
 
-.. include:: files/image-submission-to-OAR.xml
-	:code: xml
-	:start-line: 3
-	:end-line: 7
+.. literalinclude:: files/image-submission-to-OAR.xml
+	:language: xml
+	:lines: 3-7
 
 2.  edit the publication date in the :code:`tag="260"`
 
-.. include:: files/image-submission-to-OAR.xml
-	:code: xml
-	:start-line: 7
-	:end-line: 10
+.. literalinclude:: files/image-submission-to-OAR.xml
+	:language: xml
+	:lines: 8-10
 
 3. the image **main author** in the :code:`tag="100"` (use the :code:`tag="700"` for other authors), specifing the
 	* Author name in :code:`code="a"`
@@ -84,24 +86,21 @@ Now edit the :code:`../xml/image-submission-to-OAR.xml` file with your favourite
 	* Country in :code:`code="w"`
 	* ORCID in :code:`code="j"`
 
-.. include:: files/image-submission-to-OAR.xml
-	:code: xml
-	:start-line: 10
-	:end-line: 16
+.. literalinclude:: files/image-submission-to-OAR.xml
+	:language: xml
+	:lines: 11-16
 
-3. then specify the publication keywords in the :code:`tag="653"`, you can create many :code:`tag="653"`
+3. then specify the publication keywords in the :code:`tag="653"`, you can create several :code:`tag="653"` as many as keywords you want specify
 
-.. include:: files/image-submission-to-OAR.xml
-	:code: xml
-	:start-line: 35
-	:end-line: 41
+.. literalinclude:: files/image-submission-to-OAR.xml
+	:language: xml
+	:lines: 36-41
 
 4. another important filed you have to edit is the :code:`tag="FFT"` that represents where the resource can be found
 
-.. include:: files/image-submission-to-OAR.xml
-	:code: xml
-	:start-line: 51
-	:end-line: 54
+.. literalinclude:: files/image-submission-to-OAR.xml
+	:language: xml
+	:lines: 52-54
 
 .. note::
 
@@ -131,7 +130,53 @@ an email will inform NADRE repository administrators of your your new submission
 PHP
 ------------
 
+This section shows you how to upload file to NADRE repository through simple PHP scripts. PHP examples are stored in the github repository :code:`/php` `here  <https://github.com/nadre-project/nadre-tutorial/tree/master/submit/php>`_. It contains several :code:`<digital-object>-submission-to-OAR.php` files with demostrative php code, that uses the php `Client URL library <http://php.net/manual/en/book.curl.php>`_ to upload resources. As we saw in the previous section, is mandatory to generate a DOI, to do so you can use :code:`request_doi.py` script in :code:`/curl` folder, while the xml filer that describe the resources are located in the :code:`/xml` one.
+
+
 .. _`sub-label2`:
 
-LABEL 2
-^^^^^^^^^^^^
+Presentation upload
+^^^^^^^^^^^^^^^^^^^
+
+From the downloaded github repository folder, change to the :code:`/submit/php/` sub-folders with:
+
+.. code-block:: bash
+
+	nadre-tutorial-master$ cd submit/php
+
+Now we will see how to upload a presentation, to the NADRE repository, so you can refer to the :code:`presentation-submission-to-OAR.php` file shown below.
+
+.. literalinclude:: files/presentation-submission-to-OAR.php
+	:language: php
+
+As you can see it accept a parameter that is the repository hostname and will notify the user if no hostname is specified.
+
+
+Step 1: Create new DOI
+~~~~~~~~~~~~~~~~~~~~~~
+See :ref:`create_doi`
+
+Step 2: Edit XML file
+~~~~~~~~~~~~~~~~~~~~~
+Now edit the :code:`../xml/presentation-submission-to-OAR.xml` file with your favourite editor. See :ref:`edit_xml` to edit the MARCXML tags as you need
+
+Step 3: Submit record
+~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+	To actually submit the new record we will use PHP form the command line interface, you can install it using the packaged distribution of php-cli for ypu operating system.
+
+	As example for an Ubuntu based machine you can install php-cli with the following command
+
+	.. code-block:: bash
+
+		sudo apt-get install php5-cli
+
+Once you finished to edit the XML file you can submit the new presentation using the following command
+
+.. code-block:: bash
+
+	php presentation-submission-to-OAR.php nadre.ethernet.edu.et
+
+The output you'll get, if everything went well, is the same you saw in previous section and at the same way the administrator will receive an email to notify that a new record have to be revised to be published.
