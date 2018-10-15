@@ -53,7 +53,7 @@
       <subfield code="a">http://grid.ct.infn.it/hackfest/example-video.mp4</subfield>
     </datafield>
     <datafield xmlns="" tag="980" ind1=" " ind2=" "> <!-- COLLECTION INDICATOR -->
-      <subfield code="a">AVRSOTHER</subfield>
+      <subfield code="a">AVRSOTHERS</subfield>
     </datafield>
     <datafield xmlns="" tag="041" ind1=" " ind2=" "> <!-- LANGUAGE CODE -->
       <subfield code="a">eng</subfield>
