@@ -5,5 +5,5 @@
 import cgi,time
 
 doi_prefix='10.20372'
-doi =  "%s/ethernet:%s" % (doi_prefix,time.time())
+doi =  "%s/nadre:%s" % (doi_prefix,time.time())
 print doi
